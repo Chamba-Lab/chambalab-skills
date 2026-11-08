@@ -255,7 +255,8 @@ function estrategia(ev) {
     if (e.red.intro) h += `<p class="suave ancla">${md(e.red.intro)}</p>`;
     h += `<table class="tabla"><tr><th>A quién</th><th>Por qué</th><th>Búsqueda lista</th><th class="num">Por semana</th></tr>${lista(e.red.grupos).map((g) =>
       `<tr><td>${md(g.quien)}</td><td>${md(g.porque)}</td><td>${g.busqueda ? `<a href="https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(g.busqueda)}">${esc(g.busqueda)}</a>` : md(g.filtro || '')}</td><td class="num">${esc(g.semana ?? '')}</td></tr>`).join('')}</table>`;
-    if (e.red.nota) h += `<div class="tarjeta"><h3>Nota de invitación</h3><p>${md(e.red.nota)}</p><p class="suave" style="margin-top:4px">Corta, con algo real de esa persona y sin pedir trabajo.</p></div>`;
+    if (e.red.nota) h += `<div class="dos"><div class="tarjeta"><h3>Nota de invitación</h3><p>${md(e.red.nota)}</p><p class="suave" style="margin-top:4px">Corta, con algo real de esa persona y sin pedir trabajo.</p></div>
+      <div class="figura"><img src="imagenes/escena-entrevista-alpaca.jpg" alt=""></div></div>`;
   }
   const tablaEnlaces = (titulo, filas, cols) => (lista(filas).length ? `<div class="titulo-seccion ancla"><h2>${titulo}</h2></div><table class="tabla"><tr>${cols.map((c) => `<th>${c}</th>`).join('')}</tr>${lista(filas).map((x) =>
     `<tr><td><b>${x.url ? `<a href="${esc(x.url)}">${esc(x.nombre)}</a>` : esc(x.nombre)}</b></td><td>${md(x.porque)}</td>${cols.length > 2 ? `<td>${md(x.ademas || '')}</td>` : ''}</tr>`).join('')}</table>` : '');
@@ -272,7 +273,7 @@ function plan(ev) {
   return `<div class="titulo-seccion ancla"><h2><b>Plan de 30 días:</b> en orden de impacto</h2></div>${semanas}
     ${ev.reevaluacion ? `<div class="aviso info"><b>Re-evaluación:</b> ${fechaCorta(ev.reevaluacion)}. Mira antes las apariciones en búsquedas, las vistas del perfil y los mensajes de reclutadores.</div>` : ''}
     <div class="dos cierre">
-      <div class="figura"><img src="imagenes/rakim-13-open-to-work.jpg" alt=""></div>
+      <div class="figura"><img src="imagenes/escena-oferta.jpg" alt=""></div>
       <div class="tarjeta"><h3>Para seguir</h3><div class="enlaces">
         <span>&gt; manual 04 · LinkedIn desde cero</span><span>&gt; manual 06 · Experiencia sin experiencia</span>
         <span>&gt; manual 03 · CV compatible con ATS</span><span>&gt; manual 05 · Método STAR</span>

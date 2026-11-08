@@ -6,6 +6,10 @@ Una skill de [Claude Code](https://claude.com/claude-code) de la comunidad [Cham
 
 ## ✨ Qué obtienes
 
+<img src="docs/ejemplo-informe.jpg" alt="Páginas de un informe de ejemplo" width="640">
+
+*Informe de ejemplo con una persona ficticia (Valeria, ingeniera civil).*
+
 | Archivo | Qué es |
 |---|---|
 | `informe.pdf` e `informe.html` | Nota de 0 a 100, chequeo ATS automático (columnas, tablas, encabezado de Word, correo legible, hojas), «lo que ves tú y lo que lee el ATS», palabras clave frente a ofertas reales, reescrituras «antes → después», dónde postular, empresas, cursos y un plan de 2 a 4 semanas |
@@ -50,3 +54,5 @@ El CV, los documentos y los informes quedan en tu equipo, en esa carpeta. Tienen
 ## 📄 Licencia
 
 Código y documentación bajo [licencia MIT](LICENSE). Rakim y sus ilustraciones no: mira [NOTICE.md](NOTICE.md).
+
+Las escenas `assets/imagenes/escena-*.jpg` son copias recortadas del banco de recursos de los cortos de Rakim, de Chamba Lab.

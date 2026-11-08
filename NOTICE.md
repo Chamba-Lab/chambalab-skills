@@ -2,7 +2,7 @@
 
 La [licencia MIT](LICENSE) cubre el código y la documentación de este repositorio. **No cubre** lo siguiente:
 
-- Rakim y los demás personajes de Chamba Lab, sus nombres y su apariencia, incluidas las ilustraciones de `assets/imagenes/` y `assets/personaje/` de cada skill.
+- Rakim y los demás personajes de Chamba Lab, sus nombres y su apariencia, incluidas las ilustraciones de `assets/imagenes/`, `assets/personaje/` y `docs/` de cada skill.
 - El nombre y la marca Chamba Lab.
 - Los ejemplos de `manual-tecnico/docs/ejemplos/`.
 
