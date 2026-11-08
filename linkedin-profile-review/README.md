@@ -6,6 +6,10 @@ Una skill de [Claude Code](https://claude.com/claude-code) de la comunidad [Cham
 
 ## ✨ Qué obtienes
 
+<img src="docs/ejemplo-informe.jpg" alt="Páginas de un informe de ejemplo" width="640">
+
+*Informe de ejemplo con una persona ficticia (Lucía, frontend junior).*
+
 Un `informe.pdf` (y su `informe.html`) con:
 
 - nota de 0 a 100 y semáforo por sección
@@ -48,3 +52,5 @@ Si evalúas el perfil de otra persona, hazlo porque te lo pidió: según su conf
 ## 📄 Licencia
 
 Código y documentación bajo [licencia MIT](LICENSE). Rakim y sus ilustraciones no: mira [NOTICE.md](NOTICE.md).
+
+Las escenas `assets/imagenes/escena-*.jpg` son copias recortadas del banco de recursos de los cortos de Rakim, de Chamba Lab.

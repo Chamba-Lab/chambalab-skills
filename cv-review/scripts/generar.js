@@ -288,7 +288,8 @@ function estrategia(ev) {
   const tablaEnlaces = (titulo, filas, cols, intro) => (lista(filas).length ? `<div class="titulo-seccion ancla"><h2>${titulo}</h2></div>${intro ? `<p class="suave ancla">${md(intro)}</p>` : ''}<table class="tabla"><tr>${cols.map((c) => `<th>${c}</th>`).join('')}</tr>${lista(filas).map((x) =>
     `<tr><td><b>${x.url ? `<a href="${esc(x.url)}">${esc(x.nombre)}</a>` : esc(x.nombre)}</b></td><td>${md(x.porque)}</td>${cols.length > 2 ? `<td>${md(x.ademas || '')}</td>` : ''}</tr>`).join('')}</table>` : '');
   h += tablaEnlaces('<b>Dónde postular:</b> búsquedas listas', e.portales, ['Portal', 'Qué buscar ahí', 'Cómo usarlo'], e.portales_intro);
-  if (e.adaptar) h += `<div class="aviso info"><b>Adapta el CV a cada oferta:</b> ${md(e.adaptar)}</div>`;
+  if (e.adaptar) h += `<div class="dos" style="grid-template-columns:34% 1fr"><div class="figura"><img src="imagenes/escena-feria-empleo.jpg" alt=""></div>
+    <div class="tarjeta"><h3>Adapta el CV a cada oferta</h3><p>${md(e.adaptar)}</p></div></div>`;
   h += tablaEnlaces('<b>Empresas</b> que contratan tu perfil', e.empresas, ['Empresa', 'Por qué', 'Además']);
   if (e.linkedin) h += `<div class="titulo-seccion ancla"><h2><b>LinkedIn:</b> el CV te hace pasar, el perfil hace que te encuentren</h2></div>
     <div class="dos"><div class="tarjeta"><p>${md(e.linkedin)}</p><p class="suave" style="margin-top:6px">Para evaluarlo a fondo, con nota, reescrituras y plan: skill <b>linkedin-profile-review</b> (o su revisión rápida).</p></div>
@@ -305,7 +306,7 @@ function plan(ev) {
   return `${semanas ? `<div class="titulo-seccion ancla"><h2><b>Plan:</b> en orden de impacto</h2></div>${semanas}` : ''}
     ${ev.reevaluacion ? `<div class="aviso info"><b>Re-evaluación:</b> ${fechaCorta(ev.reevaluacion)}. Cuenta antes cuántas postulaciones enviaste y cuántas llamadas recibiste: esa tasa dice si el CV funciona.</div>` : ''}
     <div class="dos cierre">
-      <div class="figura"><img src="imagenes/rakim-13-open-to-work.jpg" alt=""></div>
+      <div class="figura"><img src="imagenes/escena-oferta.jpg" alt=""></div>
       <div class="tarjeta"><h3>Para seguir</h3><div class="enlaces">
         <span>&gt; manual 03 · CV compatible con ATS</span><span>&gt; manual 09 · Leer una oferta</span>
         <span>&gt; manual 05 · Método STAR</span><span>&gt; manual 06 · Experiencia sin experiencia</span>
