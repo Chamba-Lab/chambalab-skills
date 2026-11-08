@@ -1,0 +1,173 @@
+{
+  "_formato": "Ejemplo ficticio (Lucía Ramos, manuales 04 y 06). objetivo: empleo | cambio | notar. ajuste: null | cambio-carrera | sin-experiencia. bloques: nota 0-10 por bloque (la nota total, el estado y los pesos los calcula generar.js). zona de un hallazgo (opcional, pone su marcador en la maqueta): resultado-titular, resultado-ubicacion, banner, foto, nombre, titular, ubicacion, contactos, url, acerca, destacados, experiencia, aptitudes. gravedad: critico | alto | medio | bajo. Tipos de item: hallazgo, subtitulo, cambio (antes/despues: texto o lista; conteo: límite de caracteres), opciones, listas (bien/mal/agregar/quitar), top, tabla (celda [[falta:No está]] = etiqueta de estado), aviso, texto. Texto con **negrita** y [enlace](https://...).",
+  "persona": { "nombre": "Lucía Ramos", "url": "https://www.linkedin.com/in/ejemplo-lucia-ramos/" },
+  "objetivo": "empleo",
+  "ajuste": null,
+  "puesto": "Desarrolladora Frontend Junior",
+  "mercado": "Arequipa · remoto Perú",
+  "fecha": "2026-11-05",
+  "frase": "Tu perfil existe, pero un reclutador que busca **«Frontend React Arequipa»** no te encuentra. Con 6 cambios, que te llevan una tarde, pasas de invisible a competir.",
+  "bloques": { "foto": 5, "titular": 3, "ubicacion": 4, "acerca": 4, "destacados": 0, "experiencia": 5, "proyectos": 6, "educacion": 7, "aptitudes": 4, "recomendaciones": 2, "actividad": 3 },
+  "resumen": {
+    "funciona": [
+      "**App de reservas real**, con un cliente que la usa: es tu mejor prueba.",
+      "**Educación completa**, con fechas y una certificación verificable.",
+      "**Foto profesional**: de frente, con buena luz y fondo limpio."
+    ],
+    "tres_cosas": "cambia el titular, reescribe tu experiencia con las viñetas nuevas y sube la demo y el repositorio a Destacados. Con eso pasas de ~41 a ~65."
+  },
+  "cabecera": {
+    "titular": "Estudiante | Buscando oportunidades | Apasionada por la tecnología",
+    "ubicacion": "Perú",
+    "contactos": "212 contactos",
+    "otw": false,
+    "foto": null,
+    "portada": null,
+    "acerca": "Soy una persona proactiva, responsable y con muchas ganas de aprender. Me apasiona la tecnología y el trabajo en equipo. Actualmente estudio Computación e Informática y busco una oportunidad para crecer profesionalmente.",
+    "destacados": [],
+    "experiencia": "Practicante de Soporte TI · Clínica San Juan · mar.–jun. 2025",
+    "aptitudes": ["Microsoft Office", "Trabajo en equipo", "HTML"]
+  },
+  "secciones": [
+    {
+      "bloque": "titular",
+      "titulo": "**Titular:** lo único que se lee en la búsqueda",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "critico", "zona": "resultado-titular", "corto": "Titular",
+          "titulo": "No contiene ninguna palabra del puesto",
+          "leyenda": "ninguna palabra que el reclutador escriba.",
+          "porque": "las 6 ofertas revisadas piden «Frontend», «React» y «TypeScript». Nadie busca «Estudiante» ni «Apasionada»: tu perfil no sale en la lista.",
+          "arreglo": "Rol + Stack + Prueba, con las palabras de las ofertas primero." },
+        { "tipo": "cambio", "antes": "Estudiante | Buscando oportunidades | Apasionada por la tecnología", "despues": "Desarrolladora Frontend Junior | React · TypeScript · Tailwind | Creé una app de reservas usada por [completar: nº] clientes", "conteo": 220, "apilado": true },
+        { "tipo": "opciones", "titulo": "Tres opciones", "opciones": [
+          { "texto": "Desarrolladora Frontend Junior | React · TypeScript · Tailwind | Creé una app de reservas usada por [completar: nº] clientes", "por": "las tres palabras más buscadas van primero, y la prueba despierta el clic.", "recomendada": true },
+          { "texto": "Frontend Developer Jr | React · Next.js · Supabase | Apps web para negocios locales en Arequipa", "por": "Más corta, y suma el cargo en inglés para las ofertas remotas." },
+          { "texto": "Desarrolladora Frontend | React · TypeScript | Digitalicé las citas de una peluquería: de 8 a 2 olvidos por semana", "por": "La cifra concreta es la prueba más fuerte, pero quita «Junior» y puede atraer ofertas de más nivel." }
+        ] },
+        { "tipo": "listas", "quitar": ["«Buscando oportunidades»: lo dice el marco Open to Work.", "«Apasionada»: es un adjetivo y nadie lo busca."], "agregar": ["El rol exacto de las ofertas: «Frontend».", "Tres tecnologías por su nombre.", "Una prueba que se pueda comprobar."] }
+      ]
+    },
+    {
+      "bloque": "ubicacion",
+      "titulo": "**Ubicación y URL:** te filtran por ciudad",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "medio", "zona": "ubicacion", "corto": "Ubicación «Perú»",
+          "titulo": "La ubicación no dice la ciudad",
+          "leyenda": "pierdes las búsquedas filtradas por Arequipa.",
+          "porque": "el reclutador filtra por ciudad; con «Perú» a secas sales en menos búsquedas locales.",
+          "arreglo": "**Arequipa, Perú**, y marca remoto en Open to Work." }
+      ]
+    },
+    {
+      "bloque": "foto",
+      "titulo": "**Foto y portada:** la primera impresión",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "alto", "zona": "banner", "corto": "Portada genérica",
+          "titulo": "Usas la portada genérica de LinkedIn",
+          "leyenda": "espacio que podría decir «React · TypeScript».",
+          "porque": "es el espacio más grande de tu perfil y no dice nada de ti.",
+          "arreglo": "portada de 1584 × 396 px con tu stack o tu proyecto, sin nada importante abajo a la izquierda (lo tapa la foto)." }
+      ]
+    },
+    {
+      "bloque": "acerca",
+      "titulo": "**Acerca de:** el gancho antes del «ver más»",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "critico", "zona": "acerca", "corto": "Acerca de",
+          "titulo": "Empieza con adjetivos y no nombra ni una tecnología",
+          "leyenda": "el gancho son adjetivos; ni una tecnología antes del «ver más».",
+          "porque": "«proactiva y responsable» lo dicen todos los perfiles. Lo que se lee antes del corte decide si siguen.",
+          "arreglo": "cuatro bloques: gancho, stack, prueba y contacto." },
+        { "tipo": "cambio", "apilado": true, "conteo": 2600,
+          "despues": "Construyo interfaces en React que se entienden a la primera. Digitalicé las reservas de una peluquería: hoy no pierde citas.\n\nTrabajo con React, TypeScript y Tailwind; versiono en GitHub y despliego en Vercel.\n\nMi proyecto más completo: una app de reservas con calendario y recordatorios por correo, usada por [completar: nº] clientes.\n\nBusco mi primer puesto como frontend junior, en Arequipa o remoto. Escríbeme a [completar: correo]." }
+      ]
+    },
+    {
+      "bloque": "destacados",
+      "titulo": "**Destacados:** donde se abre la prueba",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "alto", "zona": "destacados", "corto": "Destacados vacío",
+          "titulo": "No hay nada que el tech lead pueda abrir",
+          "leyenda": "tu app no se puede abrir desde el perfil.",
+          "porque": "el líder técnico entra al final a ver lo que construiste; si no hay enlace, no hay prueba.",
+          "arreglo": "demo en Vercel y repositorio en GitHub, cada uno con un título que diga qué resolvió." }
+      ]
+    },
+    {
+      "bloque": "experiencia",
+      "titulo": "**Experiencia:** funciones en vez de pruebas",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "alto", "zona": "experiencia", "corto": "Experiencia",
+          "titulo": "Las viñetas describen tareas, no resultados",
+          "leyenda": "«Encargada de…» no prueba nada.",
+          "porque": "«Encargada de…» le dice al reclutador qué te pedían, no qué lograste. Sin cifras, tu experiencia es igual a la de los otros 300 postulantes.",
+          "arreglo": "Verbo en pasado + qué + con qué + resultado medible, con números honestos." },
+        { "tipo": "cambio", "etiqueta": "Practicante de Soporte TI · Clínica San Juan · mar.–jun. 2025",
+          "antes": ["Encargada del soporte a usuarios.", "Responsable de la instalación de equipos.", "Apoyo en tareas del área."],
+          "despues": ["Resolví ≈ [completar: nº] incidencias al día de 4 áreas con GLPI.", "Instalé y configuré [completar: nº] equipos para la apertura de la sede de Cayma.", "Documenté 12 procedimientos frecuentes en una guía que hoy usa el área."] },
+        { "tipo": "hallazgo", "gravedad": "medio",
+          "titulo": "Las prácticas no dicen el tipo de empleo",
+          "porque": "en Perú, las prácticas cuentan como experiencia laboral (Ley 31396). Si no se ve que lo son, se lee como un trabajo de 4 meses que terminó.",
+          "arreglo": "en «Tipo de empleo», elige «Prácticas» y vincula 3-4 aptitudes al puesto." },
+        { "tipo": "aviso", "texto": "No inventes las cifras: si no las mediste, escribe «aprox.» o usa otra prueba. Una cifra falsa se cae en la primera repregunta." }
+      ]
+    },
+    {
+      "bloque": "aptitudes",
+      "titulo": "**Aptitudes:** lo que piden las ofertas",
+      "intro": "6 ofertas de Frontend Junior en Arequipa y remoto Perú, revisadas el 05-11-2026 (fuentes al final).",
+      "items": [
+        { "tipo": "tabla", "columnas": ["Palabra en las ofertas", "Aparece", "En tu perfil", "Qué hacer"], "filas": [
+          ["React", "6/6", "[[mejorable:Abajo]]", "Al top 1 de aptitudes y al titular"],
+          ["TypeScript", "5/6", "[[falta:No está]]", "Añadir: ya lo usas en la app de reservas"],
+          ["Git / GitHub", "5/6", "[[bien:Está]]", "Vincularla a tus proyectos"],
+          ["Testing (Jest / Vitest)", "3/6", "[[falta:No está]]", "Aprender: un test en tu proyecto ya cuenta"]
+        ] },
+        { "tipo": "listas", "titulos": { "quitar": "Qué quitar del top" }, "quitar": ["Microsoft Office: no es lo que se busca para este puesto.", "Trabajo en equipo: demuéstralo en la experiencia."], "agregar": ["TypeScript", "Tailwind CSS", "APIs REST"] },
+        { "tipo": "top", "items": ["React", "TypeScript", "JavaScript", "Tailwind CSS", "Git"] }
+      ]
+    }
+  ],
+  "estrategia": {
+    "publicaciones": {
+      "subtitulo": "5 ideas que ya tienes",
+      "intro": "Última publicación propia: hace 7 meses. Para «buscar empleo»: 1-2 por semana mostrando lo que construyes. Los enlaces van en el primer comentario.",
+      "ideas": [
+        { "tipo": "Proyecto construido · carrusel", "gancho": "«Una peluquería perdía 8 citas por semana. Hoy pierde 2.»", "detalle": "Problema, la decisión de usar Supabase, el recordatorio por correo y la demo." },
+        { "tipo": "Error y lección · texto", "gancho": "«Mi app enviaba los recordatorios a la hora equivocada.»", "detalle": "El bug de las zonas horarias y cómo lo arreglaste." },
+        { "tipo": "Aprendizaje con prueba · imagen", "gancho": "«Migré mi app a TypeScript: 3 errores que JavaScript me escondía.»", "detalle": "Antes y después del código." },
+        { "tipo": "Traducir lo no tech · texto", "gancho": "«Un año en un call center me enseñó más de UX que cualquier curso.»", "detalle": "Conecta tu trabajo anterior con el puesto (manual 06)." }
+      ]
+    },
+    "red": {
+      "grupos": [
+        { "quien": "Reclutadores TI de Arequipa", "porque": "Llenan las vacantes locales", "busqueda": "reclutador TI Arequipa", "semana": 5 },
+        { "quien": "Tech leads frontend", "porque": "Deciden en la entrevista técnica", "busqueda": "\"tech lead\" frontend Peru", "semana": 5 },
+        { "quien": "Egresados de tu instituto", "porque": "Te pueden referir", "filtro": "filtro «Escuela» + empresa", "semana": 5 }
+      ],
+      "nota": "«Hola, Carla: vi tu publicación sobre la migración a Next en tu equipo. Estoy construyendo con React y me gustaría seguir tu trabajo. ¡Saludos!»"
+    },
+    "empresas": [
+      { "nombre": "[Empresa verificada]", "url": "https://example.com/empleos", "porque": "Oferta abierta de Frontend Jr con React (nov. 2026)", "ademas": "Activar alerta de empleo" }
+    ],
+    "comunidades": [
+      { "nombre": "[Comunidad verificada]", "url": "https://example.com", "porque": "Meetups mensuales de JavaScript en la ciudad" }
+    ],
+    "cuentas": [
+      { "nombre": "DevTalles · Fernando Herrera", "url": "https://www.youtube.com/@DevTalles", "porque": "React, TypeScript y Node en español, con proyectos completos", "ademas": "YouTube · gratis" }
+    ],
+    "cursos": [
+      { "nombre": "[Curso verificado de testing en React]", "url": "https://example.com", "porque": "Testing con Jest o Vitest: lo piden 3 de 6 ofertas y no está en tu perfil", "ademas": "[plataforma] · [costo verificado] · [duración]" }
+    ]
+  },
+  "plan": [
+    { "semana": "S1", "foco": "Encontrable", "tareas": ["Titular A y ubicación «Arequipa, Perú»", "URL: /in/lucia-ramos-dev", "Open to Work visible para todos", "Acerca de reescrito y top 5 de aptitudes"] },
+    { "semana": "S2", "foco": "Creíble", "tareas": ["Viñetas nuevas de la experiencia", "Demo y repositorio en Destacados", "Portada 1584 × 396 con tu stack", "Primera publicación: idea 1"] },
+    { "semana": "S3", "foco": "Visible", "tareas": ["2 publicaciones y 15 min diarios de comentarios", "15 invitaciones dirigidas", "Pedir 2 recomendaciones"] },
+    { "semana": "S4", "foco": "Sostener", "tareas": ["Una publicación fija por semana", "Revisar apariciones en búsquedas y vistas del perfil", "Re-evaluar con esta skill"] }
+  ],
+  "reevaluacion": "2026-12-05",
+  "fuentes": [
+    { "t": "linkedin.com/jobs · Frontend Junior Arequipa", "u": "https://www.linkedin.com/jobs/" }
+  ]
+}

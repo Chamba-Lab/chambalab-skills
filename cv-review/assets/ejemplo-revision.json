@@ -1,0 +1,107 @@
+{
+  "_formato": "Ejemplo ficticio (Valeria Ramos, ingeniería civil). objetivo: empleo | cambio | estado. ajuste: null | sin-experiencia | cambio-carrera. rubro: id del archivo en references/rubros (ingenieria-civil, desarrollo…) y rubro_nombre para la portada. bloques: nota 0-10 (la nota total, el estado y los pesos los calcula generar.js). zona de un hallazgo (opcional, lo marca en la miniatura del CV): encabezado, perfil, experiencia, proyectos, educacion, aptitudes, certificaciones, idiomas. gravedad: critico | alto | medio | bajo. Tipos de item: hallazgo, subtitulo, cambio (antes/despues: texto o lista), listas (bien/mal/agregar/quitar), top, tabla (celda [[falta:No está]] = etiqueta de estado), aviso, texto. Texto con **negrita**, [enlace](https://...) y [completar: dato]. cv_propuesto: ver references/cv-propuesto.md. cv-leido.json (de leer.py) debe estar en la misma carpeta.",
+  "persona": { "nombre": "Valeria Ramos Quispe" },
+  "archivo": "CV Valeria 2026.pdf",
+  "objetivo": "cambio",
+  "ajuste": null,
+  "rubro": "ingenieria-civil",
+  "rubro_nombre": "Ingeniería civil",
+  "puesto": "Ingeniera de oficina técnica",
+  "mercado": "Lima · presencial o híbrido",
+  "fecha": "2026-11-05",
+  "frase": "Tienes 2 años y 8 meses en oficina técnica y lo puedes probar, pero tu CV lo cuenta como una lista de tareas en dos columnas que el ATS mezcla. **No dice ni tu colegiatura ni S10**, justo lo que filtran las ofertas.",
+  "palabras_clave": ["metrados", "valorizaciones", "S10", "MS Project", "presupuestos", "control de costos", "AutoCAD", "colegiado y habilitado"],
+  "bloques": { "formato": 3, "extension": 5, "encabezado": 4, "perfil": 3, "experiencia": 5, "proyectos": 4, "palabras": 4, "educacion": 6, "certificaciones": 5, "aptitudes": 5, "redaccion": 6, "coherencia": 5 },
+  "resumen": {
+    "cuesta": [
+      "**Dos columnas hechas en Canva:** el ATS lee tu nombre junto a tus cursos y pierde tu correo.",
+      "**Funciones, no resultados:** «Apoyo en metrados y valorizaciones» no dice de qué obra ni a qué escala.",
+      "**Falta lo que filtran las ofertas:** colegiatura y habilitación, S10 y MS Project."
+    ],
+    "funciona": [
+      "**Experiencia en el mismo tipo de obra** que piden las constructoras de edificación de Lima.",
+      "**Constancias de todos tus puestos:** puedes probar cada fecha."
+    ],
+    "tres_cosas": "pasa el CV a una columna con el contenido propuesto; añade colegiatura, S10 y MS Project; reescribe las viñetas con la obra y su escala."
+  },
+  "secciones": [
+    {
+      "bloque": "formato",
+      "titulo": "**Formato:** bonito para ti, desordenado para el ATS",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "alto", "zona": "encabezado", "corto": "Dos columnas",
+          "titulo": "El ATS lee tus dos columnas como si fueran una",
+          "leyenda": "el texto extraído mezcla «PERFIL» con «CURSOS».",
+          "porque": "la columna izquierda (cursos e idiomas) y la derecha (experiencia) se leen línea por línea, de lado a lado. El reclutador que busca «valorizaciones» recibe frases cortadas.",
+          "arreglo": "una sola columna, de arriba abajo, con el contenido de la sección «Tu CV propuesto»." }
+      ]
+    },
+    {
+      "bloque": "experiencia",
+      "titulo": "**Experiencia:** tareas sin obra ni escala",
+      "items": [
+        { "tipo": "hallazgo", "gravedad": "alto", "zona": "experiencia", "corto": "Experiencia",
+          "titulo": "Ninguna viñeta dice qué obra, cuánto ni con qué",
+          "leyenda": "«Apoyo en…» en todas las viñetas.",
+          "porque": "el jefe de oficina técnica quiere saber si ya valorizaste una obra como la suya. «Apoyo en metrados» no lo dice.",
+          "arreglo": "verbo en pasado + qué + con qué herramienta + escala de la obra." },
+        { "tipo": "cambio", "etiqueta": "Asistente de oficina técnica · Constructora Ficticia S.A.C. · 03/2024 – actualidad",
+          "antes": ["Apoyo en metrados y valorizaciones.", "Elaboración de informes."],
+          "despues": ["Elaboré las valorizaciones mensuales al cliente y a [completar: nº] subcontratistas de un multifamiliar de [completar: nº] pisos, con S10 y Excel.", "Preparé los informes mensuales de avance y la curva S en MS Project para la supervisión."] }
+      ]
+    },
+    {
+      "bloque": "palabras",
+      "titulo": "**Palabras clave:** frente a 6 ofertas de Lima",
+      "items": [
+        { "tipo": "tabla", "columnas": ["Lo que piden", "Frecuencia", "En tu CV", "Qué hacer"], "filas": [
+          ["Colegiado y habilitado", "5 de 6", "[[falta:No está]]", "Encabezado y Educación"],
+          ["S10", "4 de 6", "[[falta:No está]]", "Habilidades y en la viñeta donde lo usaste"],
+          ["Valorizaciones", "6 de 6", "[[mejorable:Como «apoyo»]]", "Viñeta con escala"]
+        ] }
+      ]
+    },
+    {
+      "bloque": "coherencia",
+      "titulo": "**Tus pruebas:** lo que tienes documentado",
+      "items": [
+        { "tipo": "tabla", "columnas": ["Documento", "Qué prueba", "En el CV", "Qué hacer"], "filas": [
+          ["Constancia de Constructora Ficticia", "Asistente de OT, 03/2024 – vigente", "[[bien:Coincide]]", "Mantener"],
+          ["Certificado S10 (40 h)", "Costos y presupuestos", "[[falta:No está]]", "Añadir en Cursos, con horas"]
+        ] }
+      ]
+    }
+  ],
+  "cv_propuesto": {
+    "archivo_sugerido": "CV-Valeria-Ramos-Oficina-Tecnica.pdf",
+    "extension_objetivo": "1 hoja",
+    "encabezado": { "nombre": "Valeria Ramos Quispe", "titulo": "Ingeniera civil · Oficina técnica · Metrados, valorizaciones y costos", "ciudad": "Lima, Perú", "telefono": "+51 900 000 000", "correo": "valeria.ramos@example.com", "enlaces": [{ "t": "linkedin.com/in/valeria-ramos", "u": "https://www.linkedin.com/in/valeria-ramos" }], "extra": "Colegiatura CIP n.º [completar: número] · Habilitada" },
+    "perfil": "Ingeniera civil con 2 años y 8 meses en oficina técnica de edificaciones: metrados, valorizaciones y control de costos con S10 y MS Project.",
+    "secciones": [
+      { "titulo": "Experiencia", "entradas": [
+        { "cargo": "Asistente de oficina técnica", "organizacion": "Constructora Ficticia S.A.C.", "lugar": "Lima, Perú", "fechas": "03/2024 – actualidad",
+          "vinetas": ["Elaboré las valorizaciones mensuales al cliente y a [completar: nº] subcontratistas de un multifamiliar de [completar: nº] pisos, con S10 y Excel.", "Preparé los informes mensuales de avance y la curva S en MS Project para la supervisión."] } ] },
+      { "titulo": "Educación", "entradas": [{ "cargo": "Ingeniería Civil · bachiller", "organizacion": "Universidad Ficticia", "fechas": "2018 – 2023" }] },
+      { "titulo": "Cursos y certificaciones", "items": ["Costos y presupuestos con S10 · Institución Ficticia · 2025 · 40 h"] },
+      { "titulo": "Habilidades", "grupos": [{ "t": "Software", "items": ["S10", "MS Project", "AutoCAD", "Excel avanzado"] }] }
+    ]
+  },
+  "estrategia": {
+    "portales": [
+      { "nombre": "Computrabajo", "url": "https://pe.computrabajo.com/trabajo-de-ingeniero-oficina-tecnica-en-lima", "porque": "Asistente e ingeniero de oficina técnica en Lima", "ademas": "Completa el formulario y crea la alerta" },
+      { "nombre": "Bolsa del CIP Lima", "url": "https://ciplima.org.pe", "porque": "Convocatorias de constructoras y consultoras", "ademas": "Postula por correo con el asunto que pide cada aviso" }
+    ],
+    "adaptar": "cambia el título del encabezado por el nombre exacto del puesto de la oferta y sube la viñeta que mejor encaje con su tipo de obra.",
+    "empresas": [{ "nombre": "Constructora Ficticia 2", "url": "https://example.com/empleos", "porque": "Edificación en Lima, ofertas de oficina técnica", "ademas": "Alerta de empleo" }],
+    "linkedin": "pon el mismo cargo y las mismas fechas que en el CV, activa Open to Work solo para reclutadores y conecta con jefes de oficina técnica de las empresas de la lista.",
+    "comunidades": [{ "nombre": "CIP · capítulo de ingeniería civil", "url": "https://ciplima.org.pe", "porque": "Eventos, cursos y bolsa de trabajo" }],
+    "cuentas": [],
+    "cursos": [{ "nombre": "[Curso verificado de MS Project o BIM]", "url": "https://example.com", "porque": "Cierra la brecha de planeamiento", "ademas": "[plataforma] · [costo verificado] · [horas]" }]
+  },
+  "plan": [
+    { "semana": "S1", "foco": "Legible", "tareas": ["Pasar el CV propuesto a una columna con la skill de formato", "Completar los datos pendientes"] },
+    { "semana": "S2", "foco": "Visible", "tareas": ["Postular a 5 ofertas adaptando el título y el perfil", "Alertas en Computrabajo y Bumeran"] }
+  ],
+  "reevaluacion": "2026-12-05",
+  "fuentes": [{ "t": "Oferta ficticia de ejemplo", "u": "https://example.com" }]
+}
