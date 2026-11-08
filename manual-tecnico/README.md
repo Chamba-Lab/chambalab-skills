@@ -27,11 +27,16 @@ Le pides un tema y recibes de 12 a 18 diapositivas que van del concepto al detal
 
 **Necesitas:** Claude Code, Node.js 18 o superior, internet y una cuenta de ChatGPT u otro generador de imágenes.
 
-**1. Clona la skill**
+**1. Copia la skill**
+
+Vive en el repositorio [chambalab-skills](https://github.com/Chamba-Lab/chambalab-skills), junto a las demás skills de Chamba Lab:
 
 ```bash
-git clone https://github.com/Chamba-Lab/manual-tecnico.git ~/.claude/skills/manual-tecnico
+git clone https://github.com/Chamba-Lab/chambalab-skills.git ~/chambalab-skills
+cp -r ~/chambalab-skills/manual-tecnico ~/.claude/skills/
 ```
+
+En Windows con PowerShell, mira el [README principal](../README.md#-instalar).
 
 **2. Instala Playwright para exportar automáticamente**
 
