@@ -41,7 +41,7 @@ async function main() {
   fs.mkdirSync(salida, { recursive: true });
 
   const navegador = await chromium.launch();
-  const pagina = await navegador.newPage({ viewport: { width: 1600, height: 1000 } });
+  const pagina = await navegador.newPage({ viewport: { width: 1600, height: 1400 } });
   await pagina.goto('file://' + ruta, { waitUntil: 'networkidle' });
   await pagina.waitForTimeout(1500);
 
