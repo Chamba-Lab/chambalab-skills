@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Portada LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+/* Portada cuadrada 1080x1080 para el feed de LinkedIn.
+   Se lee en un teléfono: título corto y grande, poco texto.
+   Para exportarla: scripts/exportar.js, o captura de pantalla del cuadro. */
+:root{
+  --acento:#22c55e;          /* color de marca del tema (el mismo --marca del manual) */
+  --alterno:#2dd4bf;         /* segundo color del tema (el mismo --alterno del manual) */
+  --fondo:#07090b; --fuerte:#fff; --suave:#94a3b8; --tenue:#64748b; --linea:rgba(255,255,255,.1);
+}
+/* modo claro: <div class="portada tema-claro"> */
+.tema-claro{--fondo:#f7f7f4; --fuerte:#0b0f14; --suave:#475569; --tenue:#64748b; --linea:rgba(15,23,42,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;display:flex;align-items:center;justify-content:center;min-height:100vh;
+     font-family:'Inter',system-ui,sans-serif}
+
+.portada{
+  position:relative;width:1080px;height:1080px;padding:92px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:
+    radial-gradient(760px 620px at 82% -6%, color-mix(in srgb,var(--acento) 24%,transparent), transparent 62%),
+    radial-gradient(620px 520px at -10% 106%, color-mix(in srgb,var(--acento) 13%,transparent), transparent 58%),
+    var(--fondo);
+  color:var(--fuerte);overflow:hidden;
+}
+.portada::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--linea) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--linea) 1px,transparent 1px);
+  background-size:60px 60px;opacity:.3;
+  mask-image:radial-gradient(circle at 50% 45%,#000 58%,transparent 100%);
+}
+.portada > *{position:relative;z-index:1}
+.logo{height:64px;width:auto}
+
+.serie{font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.2em;
+       color:var(--acento)}
+
+.tec{display:inline-block;align-self:flex-start;padding:12px 24px;border-radius:999px;
+     font-weight:600;color:var(--acento);
+     background:color-mix(in srgb,var(--acento) 16%,transparent);
+     border:1px solid color-mix(in srgb,var(--acento) 48%,transparent);margin:10px 0 18px;font-size:26px}
+
+h1{font-size:96px;font-weight:800;letter-spacing:-.04em;line-height:.98;color:var(--fuerte)}
+
+.sub{margin-top:20px;font-size:34px;line-height:1.3;color:var(--suave)}
+
+.pie{position:absolute;left:92px;right:92px;bottom:72px;
+     display:flex;justify-content:space-between;align-items:center;
+     font-size:26px;color:var(--tenue);border-top:1px solid var(--linea);padding-top:28px}
+.pie b{color:var(--fuerte);font-weight:600}
+/* Rakim arriba, sin marco: bordes difuminados + halo detrás; el texto va debajo */
+.portada{justify-content:flex-start;padding-top:72px}
+.cabecera{display:flex;align-items:center;justify-content:space-between}
+.escena{position:relative;height:430px;margin:6px -92px 0;display:flex;justify-content:center}
+.halo{position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(300px 220px at 50% 58%, color-mix(in srgb,var(--acento) 55%,transparent), transparent 70%),
+    radial-gradient(240px 170px at 30% 70%, color-mix(in srgb,var(--alterno) 22%,transparent), transparent 70%),
+    radial-gradient(260px 190px at 72% 38%, color-mix(in srgb,var(--acento) 30%,transparent), transparent 70%);
+  filter:blur(30px)}
+.orbita{position:absolute;left:50%;top:52%;width:760px;height:300px;transform:translate(-50%,-50%) rotate(-8deg);
+  border:2px dashed color-mix(in srgb,var(--acento) 35%,transparent);border-radius:50%;
+  mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent)}
+.ilustracion{width:764px;height:430px;
+  background:var(--img) center/cover no-repeat;
+  -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%);
+  mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%)}
+</style>
+</head>
+<body>
+  <div class="portada">
+    <div class="cabecera">
+      <img class="logo" src="imagenes/logo.svg" alt="" onerror="this.remove()">
+      <div class="serie">MANUAL 01</div>
+    </div>
+    <div class="escena">
+      <div class="halo"></div>
+      <div class="orbita"></div>
+      <div class="ilustracion" style="--img:url(imagenes/01-portada.png)"></div>
+    </div>
+    <span class="tec">Tecnología v0.0</span>
+    <h1>Título<br>del tema</h1>
+    <div class="sub">La transformación en una línea.</div>
+    <div class="pie"><span><b>Chamba Lab</b></span><span>github.com/Chamba-Lab</span></div>
+  </div>
+</body>
+</html>
