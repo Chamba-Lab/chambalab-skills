@@ -1,9 +1,12 @@
 /* Extractor de una página de perfil de LinkedIn. Se ejecuta DENTRO de la pestaña con
    mcp__claude-in-chrome__javascript_tool: pega el contenido tal cual en cada página.
 
-   - Espera a que cargue, hace scroll para traer lo diferido y limpia el texto: sin duplicados,
-     sin botones, sin barra lateral ("Otros perfiles vistos", "Gente que podrías conocer",
-     "Podría gustarte") y sin el pie de LinkedIn.
+   - Espera a que cargue y baja la página a tramos para que LinkedIn pinte las secciones
+     diferidas (Experiencia, Educación, Licencias… solo existen en el DOM tras entrar en pantalla).
+     Desde nov. 2026 lo que se desplaza es <main>, no la ventana: por eso se busca el contenedor
+     desplazable y se baja de a ~80 % de su alto, en vez de saltar al final con window.scrollTo.
+   - Limpia el texto: sin duplicados, sin botones, sin barra lateral ("Más perfiles para ti",
+     "Otros perfiles vistos", "Gente que podrías conocer", "Podría gustarte") y sin el pie.
    - La herramienta corta las respuestas hacia los ~1000 caracteres: el resultado completo queda
      en window.__perfil y se devuelve "longitud · primer tramo". Lee el resto con
      window.__perfil.slice(900, 1800), slice(1800, 2700)… hasta cubrir la longitud.
@@ -11,14 +14,23 @@
      de la foto y la portada, solo se devuelve su caja en pantalla para recortarlas con la acción
      zoom + save_to_disk (ver references/lectura-chrome.md).
    Solo lee: no hace clic ni envía nada. */
-(async () => {
+await (async () => {
   const espera = (ms) => new Promise((r) => setTimeout(r, ms));
   await espera(1500);
-  for (let i = 0; i < 2; i++) { window.scrollTo(0, document.body.scrollHeight); await espera(1200); }
-  window.scrollTo(0, 0); await espera(300);
+  // contenedor que de verdad se desplaza: <main> en el diseño actual; si no, la ventana
+  const puede = (e) => e && /(auto|scroll)/.test(getComputedStyle(e).overflowY) && e.scrollHeight > e.clientHeight + 50;
+  const main0 = document.querySelector('main');
+  const caja0 = puede(main0) ? main0 : [...document.querySelectorAll('main *, body > div')].find(puede) || document.scrollingElement;
+  let previo = -1;
+  for (let i = 0; i < 40; i++) {
+    caja0.scrollBy(0, caja0.clientHeight * 0.8); await espera(500);
+    if (caja0.scrollTop === previo) { await espera(800); if (caja0.scrollTop + caja0.clientHeight >= caja0.scrollHeight - 2) break; }
+    previo = caja0.scrollTop;
+  }
+  caja0.scrollTo(0, 0); await espera(400);
 
   const ruido = /^(mostrar (todo|todas|todos|menos|credencial|proyecto|publicaci[oó]n|todos los detalles.*)|show (all|more|less|credential|project)|ver (m[aá]s|todo|credencial|an[aá]lisis)|…\s*(ver )?m[aá]s|see more|seguir|siguiendo|conectar|mensaje|enviar mensaje|m[aá]s|follow|connect|message|more|validar|endorse|recomendar|comentar|compartir|enviar|editar|edit|anterior|siguiente|previous|next|abrir|comenzar|añadir (secci[oó]n|servicios|proyectos)|mejorar perfil|mejorar con la ia|recursos|tengo inter[eé]s en…|crear una publicaci[oó]n|​|—|·|\d+\s*(de|of)\s*\d+)$/i;
-  const barra = /^(otros perfiles vistos|gente que podr[ií]as conocer|podr[ií]a gustarte|personas que tambi[eé]n|people also viewed|people you may know)/i;
+  const barra = /^(m[aá]s perfiles para ti|explorar perfiles premium|otros perfiles vistos|gente que podr[ií]as conocer|podr[ií]a gustarte|personas que tambi[eé]n|people also viewed|people you may know)/i;
   const pie = /^(accesibilidad|accessibility)$/i;
 
   const main = document.querySelector('main') || document.body;
