@@ -294,7 +294,11 @@ function paginar() {
     if (!cabe(cuerpo) && cuerpo.children.length > 1) {
       const mover = [];
       while (!cabe(cuerpo) && cuerpo.children.length > 1) mover.unshift(cuerpo.lastElementChild), cuerpo.lastElementChild.remove();
-      while (cuerpo.children.length > 1 && cuerpo.lastElementChild.classList.contains('ancla')) mover.unshift(cuerpo.lastElementChild), cuerpo.lastElementChild.remove();
+      // un ancla viaja con lo que introduce; un hallazgo seguido de otro hallazgo o de otra sección no
+      // introduce nada, así que se queda (si no, una racha de hallazgos deja hojas casi vacías)
+      const suelto = (el) => /(^| )(hallazgo|arreglo-lite)( |$)/.test(el.className) && mover[0]
+        && /(^| )(hallazgo|arreglo-lite|titulo-seccion)( |$)/.test(mover[0].className);
+      while (cuerpo.children.length > 1 && cuerpo.lastElementChild.classList.contains('ancla') && !suelto(cuerpo.lastElementChild)) mover.unshift(cuerpo.lastElementChild), cuerpo.lastElementChild.remove();
       const nueva = hojaActual.cloneNode(true);
       const c2 = nueva.querySelector('.cuerpo');
       c2.innerHTML = '';
